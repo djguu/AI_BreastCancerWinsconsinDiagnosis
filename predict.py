@@ -11,6 +11,9 @@ import pickle
 # Disable AVX/AVX2 warning
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+# CHANGE FILE HERE
+data_file = 'test.data'
+
 labels = ["Benign", "Malign"]
 
 # Make numpy values easier to read.
@@ -19,7 +22,7 @@ np.set_printoptions(precision=6, suppress=True)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
-df = pd.read_csv('test.data', header=None)
+df = pd.read_csv(data_file, header=None)
 
 df[1].replace(to_replace=['M', 'B'], value=[1, 0], inplace=True)
 
